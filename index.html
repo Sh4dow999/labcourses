@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the page</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .content { display: none; }
+    .visible { display: block; }
+  </style>
+</head>
+<body>
+
+  <h1>This is a page for reading some random stuff</h1>
+
+  <!-- Keele valiku nupp -->
+  <button onclick="showLanguage('et')">Eesti keel</button>
+  <button onclick="showLanguage('en')">English</button>
+
+  <!-- Eesti sisu -->
+  <div id="et" class="content">
+    <h2>Tere tulemast!</h2>
+    <p>Vaatame, mis siin toimub</p>
+  </div>
+
+  <!-- Ingliskeelne sisu -->
+  <div id="en" class="content">
+    <h2>Welcome!</h2>
+    <p>Let's see what's up in here</p>
+  </div>
+
+  <script>
+    function showLanguage(language) {
+      // Eemaldab kõik keeledivid
+      document.getElementById('et').classList.remove('visible');
+      document.getElementById('en').classList.remove('visible');
+      
+      // Näitab valitud keele sisu
+      document.getElementById(language).classList.add('visible');
+    }
+
+    // Algne keel (näitab ingliskeelset sisu)
+    showLanguage('en');
+  </script>
+
+</body>
+</html>
